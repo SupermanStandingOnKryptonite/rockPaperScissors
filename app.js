@@ -27,24 +27,88 @@ function playRound(playerSelection, computerSelection) {
     return "Player Wins";
   }
 }
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-  for (let i = 0; i < 4; i++) {
-    const computerSelection = computerPlay();
-    const playerSelection = prompt().toLowerCase();
-    if (playRound(playerSelection, computerSelection) === "Player Wins") {
-      playerScore++;
-    } else if (
-      playRound(playerSelection, computerSelection) === "Computer Wins"
-    ) {
-      computerScore++;
-    }
+
+let rock = document.querySelector(".rock");
+let paper = document.querySelector(".paper");
+let scissors = document.querySelector(".scissors");
+
+let playerScore = 0;
+let computerScore = 0;
+
+rock.addEventListener("click", () => {
+  const computerSelection = computerPlay();
+  const playerSelection = "rock";
+  if (playRound(playerSelection, computerSelection) === "Player Wins") {
+    playerScore++;
+  } else if (
+    playRound(playerSelection, computerSelection) === "Computer Wins"
+  ) {
+    computerScore++;
   }
-  if (playerScore < computerScore) {
-    console.log("loose");
-  } else {
-    console.log("win");
+  pdiv.textContent = `Player Score: ${playerScore}`;
+  cdiv.textContent = `Computer Score: ${computerScore}`;
+  if (playerScore === 5) {
+    alert("Player Won");
+    playerScore = 0;
+    computerScore = 0;
+  } else if (computerScore === 5) {
+    alert("Computer Won");
+    playerScore = 0;
+    computerScore = 0;
   }
-}
-game();
+});
+paper.addEventListener("click", () => {
+  const computerSelection = computerPlay();
+  const playerSelection = "paper";
+  if (playRound(playerSelection, computerSelection) === "Player Wins") {
+    playerScore++;
+  } else if (
+    playRound(playerSelection, computerSelection) === "Computer Wins"
+  ) {
+    computerScore++;
+  }
+  pdiv.textContent = `Player Score: ${playerScore}`;
+  cdiv.textContent = `Computer Score: ${computerScore}`;
+  if (playerScore === 5) {
+    alert("Player Won");
+    playerScore = 0;
+    computerScore = 0;
+  } else if (computerScore === 5) {
+    alert("Computer Won");
+    playerScore = 0;
+    computerScore = 0;
+  }
+});
+scissors.addEventListener("click", () => {
+  const computerSelection = computerPlay();
+  const playerSelection = "scissors";
+  if (playRound(playerSelection, computerSelection) === "Player Wins") {
+    playerScore++;
+  } else if (
+    playRound(playerSelection, computerSelection) === "Computer Wins"
+  ) {
+    computerScore++;
+  }
+  pdiv.textContent = `Player Score: ${playerScore}`;
+  cdiv.textContent = `Computer Score: ${computerScore}`;
+  if (playerScore === 5) {
+    alert("Player Won");
+    playerScore = 0;
+    computerScore = 0;
+  } else if (computerScore === 5) {
+    alert("Computer Won");
+    playerScore = 0;
+    computerScore = 0;
+  }
+});
+
+score = document.querySelector(".score");
+
+const pdiv = document.createElement("div");
+pdiv.textContent = `Player Score: ${playerScore}`;
+
+const cdiv = document.createElement("div");
+cdiv.textContent = `Computer Score: ${computerScore}`;
+
+score.appendChild(pdiv);
+score.appendChild(cdiv);
