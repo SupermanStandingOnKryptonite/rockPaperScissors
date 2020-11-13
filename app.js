@@ -51,10 +51,14 @@ rock.addEventListener("click", () => {
     alert("Player Won");
     playerScore = 0;
     computerScore = 0;
+    pdiv.textContent = `Player Score: ${playerScore}`;
+    cdiv.textContent = `Computer Score: ${computerScore}`;
   } else if (computerScore === 5) {
     alert("Computer Won");
     playerScore = 0;
     computerScore = 0;
+    pdiv.textContent = `Player Score: ${playerScore}`;
+    cdiv.textContent = `Computer Score: ${computerScore}`;
   }
 });
 paper.addEventListener("click", () => {
@@ -70,13 +74,17 @@ paper.addEventListener("click", () => {
   pdiv.textContent = `Player Score: ${playerScore}`;
   cdiv.textContent = `Computer Score: ${computerScore}`;
   if (playerScore === 5) {
+    playerScore = 0;
+    computerScore = 0;
     alert("Player Won");
-    playerScore = 0;
-    computerScore = 0;
+    pdiv.textContent = `Player Score: ${playerScore}`;
+    cdiv.textContent = `Computer Score: ${computerScore}`;
   } else if (computerScore === 5) {
-    alert("Computer Won");
     playerScore = 0;
     computerScore = 0;
+    alert("Computer Won");
+    pdiv.textContent = `Player Score: ${playerScore}`;
+    cdiv.textContent = `Computer Score: ${computerScore}`;
   }
 });
 scissors.addEventListener("click", () => {
@@ -95,10 +103,14 @@ scissors.addEventListener("click", () => {
     alert("Player Won");
     playerScore = 0;
     computerScore = 0;
+    pdiv.textContent = `Player Score: ${playerScore}`;
+    cdiv.textContent = `Computer Score: ${computerScore}`;
   } else if (computerScore === 5) {
     alert("Computer Won");
     playerScore = 0;
     computerScore = 0;
+    pdiv.textContent = `Player Score: ${playerScore}`;
+    cdiv.textContent = `Computer Score: ${computerScore}`;
   }
 });
 
